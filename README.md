@@ -13,6 +13,10 @@
 
 > **Open source under [AGPL-3.0](LICENSE).** Clone it, run it, fork it, build on it — the only ask is that network-served modifications stay open (that's the AGPL). Want the guided setup, weekly office hours, and a room full of operators using it on real client work? That happens in the [AI Marketing Hub Pro](https://www.skool.com/ai-marketing-hub-pro) community.
 
+## Watch the demo live
+
+▶ [See SEO Office in action on YouTube](https://www.youtube.com/watch?v=8ef8giRuHFw)
+
 ### Why SEO Office
 
 - **Local-first by design.** Every brain note, every audit, every keyword export lives in `./.seo-office/` on your disk. The app talks to LLM providers and SEO APIs through your own keys. We never see your data because we do not run a server.
