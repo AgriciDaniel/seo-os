@@ -1,0 +1,82 @@
+filters:
+  and:
+    - file.path.startsWith("wiki/")
+    - file.ext == "md"
+    - file.name != "_index"
+formulas:
+  age_days: '(now() - file.mtime) / (1000 * 60 * 60 * 24)'
+  is_stale: 'age_days > 60'
+properties:
+  file.name:
+    displayName: Note
+  type:
+    displayName: Type
+  status:
+    displayName: Status
+  updated:
+    displayName: Updated
+  tags:
+    displayName: Tags
+  formula.age_days:
+    displayName: Age (days)
+  formula.is_stale:
+    displayName: Stale
+views:
+  - type: table
+    name: All Wiki Notes
+    order:
+      - file.name
+      - type
+      - status
+      - updated
+      - formula.age_days
+    sort:
+      - property: updated
+        direction: DESC
+  - type: table
+    name: By Type
+    order:
+      - type
+      - file.name
+      - status
+      - updated
+    sort:
+      - property: type
+        direction: ASC
+      - property: file.name
+        direction: ASC
+    group: type
+  - type: table
+    name: By Status
+    order:
+      - status
+      - file.name
+      - type
+      - updated
+    sort:
+      - property: status
+        direction: ASC
+    group: status
+  - type: table
+    name: Stale Notes (>60 days)
+    filters:
+      and:
+        - formula.is_stale == true
+    order:
+      - file.name
+      - type
+      - updated
+      - formula.age_days
+    sort:
+      - property: formula.age_days
+        direction: DESC
+  - type: cards
+    name: Seed Notes Needing Work
+    filters:
+      and:
+        - status == "seed"
+    order:
+      - file.name
+      - type
+      - updated
+    cardSize: medium

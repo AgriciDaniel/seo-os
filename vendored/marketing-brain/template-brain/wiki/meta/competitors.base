@@ -1,0 +1,63 @@
+filters:
+  and:
+    - type == "entity"
+    - tier != null
+properties:
+  file.name:
+    displayName: Competitor
+  tier:
+    displayName: Tier
+  domain:
+    displayName: Domain
+  intersection_count:
+    displayName: Common Keywords
+  etv:
+    displayName: ETV
+  ranking_keywords:
+    displayName: Total Ranking Keywords
+  notes:
+    displayName: Notes
+views:
+  - type: cards
+    name: All Competitors (Cards)
+    order:
+      - file.name
+      - tier
+      - domain
+      - intersection_count
+      - etv
+    sort:
+      - property: tier
+        direction: ASC
+      - property: intersection_count
+        direction: DESC
+    cardSize: large
+  - type: table
+    name: By Tier
+    order:
+      - tier
+      - file.name
+      - domain
+      - intersection_count
+      - etv
+      - ranking_keywords
+    sort:
+      - property: tier
+        direction: ASC
+      - property: intersection_count
+        direction: DESC
+    group: tier
+  - type: cards
+    name: Tier 1 Only
+    filters:
+      and:
+        - tier == 1
+    order:
+      - file.name
+      - domain
+      - intersection_count
+      - etv
+    sort:
+      - property: intersection_count
+        direction: DESC
+    cardSize: large

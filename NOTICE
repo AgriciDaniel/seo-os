@@ -1,0 +1,31 @@
+SEO Office
+Copyright (c) 2026 Daniel Agrici
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, version 3. See the LICENSE file for the
+full text.
+
+
+Vendored third-party components
+-------------------------------
+
+Code under `vendored/` is incorporated from the following projects and
+remains governed by its own original license (preserved alongside the
+source in each directory):
+
+  - claw3d          (MIT)  https://github.com/iamlukethedev/claw3d
+  - claude-seo      (MIT)  https://github.com/AgriciDaniel/claude-seo
+  - marketing-brain (MIT)  https://github.com/AgriciDaniel/marketing-brain
+
+The AGPL-3.0 terms apply to the SEO Office product code (everything
+outside `vendored/`) and to the integration work that fuses these
+sources into the unified application.
+
+
+Trademarks
+----------
+
+"SEO Office" and "AI Marketing Hub" are trademarks of their respective
+owners. The AGPL-3.0 grant does not include any trademark license; see
+section 7 of the license for the relevant terms.

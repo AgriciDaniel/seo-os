@@ -1,0 +1,30 @@
+# Per-client vault — when a user `git init`s their scaffolded vault,
+# these patterns prevent committing credentials, raw API caches, and
+# large generated deliverables.
+
+# Credentials — env vars only
+.env
+.env.*
+*.env
+
+# Raw DataForSEO API caches (large, derived from creds)
+.raw/sources/dataforseo/
+
+# Build state
+.scaffold-state.json
+
+# Per-run deliverables
+keywords-*.xlsx
+keywords-*.csv
+*-Beast-Plan.pdf
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Obsidian — keep config but ignore workspace/cache
+.obsidian/workspace*
+.obsidian/cache

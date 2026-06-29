@@ -1,0 +1,339 @@
+@import "tailwindcss";
+
+/*
+ * SEO Office visual system — adapted from rohitg00/agentmemory's DESIGN.md
+ * (a Lamborghini-inspired aesthetic).
+ *
+ * Surface tokens (darkness gradient — Lamborghini's "shadows are color shifts"):
+ *   --bg-abyss      pure black, page canvas
+ *   --bg-iron       barely-perceptible elevation (footers, deep sections)
+ *   --bg-charcoal   cards, content panels
+ *   --bg-graphite   subtle borders + dividers
+ *   --bg-ash        muted text, secondary labels
+ *
+ * The single chromatic accent is gold, reserved for primary CTAs ONLY.
+ * Emerald is kept as the data/live state accent (active desks, success).
+ */
+
+:root {
+  /* surface ladder */
+  --bg-abyss:    #000000;
+  --bg-iron:     #0a0a0d;
+  --bg-charcoal: #131318;
+  --bg-graphite: #202028;
+  --bg-fog:      #2a2a35;
+
+  /* type */
+  --fg-pure:    #ffffff;
+  --fg-smoke:   #f5f5f5;
+  --fg-ash:     #969696;
+  --fg-shadow:  #555555;
+
+  /* accent system */
+  --accent-gold:       #ffc000;
+  --accent-gold-hover: #d4a000;
+  --accent-gold-press: #917300;
+  --accent-emerald:    #10b981;
+  --accent-emerald-dim:#064e3b;
+
+  /* semantic */
+  --sev-critical: #ef4444;
+  --sev-high:     #f59e0b;
+  --sev-medium:   #3b82f6;
+  --sev-low:      #71717a;
+  --sev-idle:     var(--accent-emerald);
+
+  --background: var(--bg-abyss);
+  --foreground: var(--fg-pure);
+  --font-office-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-office-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* Smooth theme transitions — 600ms ease on all chrome tokens */
+:root {
+  transition:
+    --fg 600ms ease,
+    --accent 600ms ease,
+    --chrome-bg 600ms ease,
+    --window-bg 600ms ease,
+    --panel-bg 600ms ease,
+    --titlebar-bg 600ms ease,
+    --ribbon 600ms ease,
+    --ok 600ms ease,
+    --err 600ms ease;
+}
+
+#os-shell, #os-workspace, .os {
+  transition: background-color 600ms ease, color 600ms ease, border-color 600ms ease;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-abyss:      var(--bg-abyss);
+  --color-iron:       var(--bg-iron);
+  --color-charcoal:   var(--bg-charcoal);
+  --color-graphite:   var(--bg-graphite);
+  --color-fog:        var(--bg-fog);
+  --color-ash:        var(--fg-ash);
+  --color-gold:       var(--accent-gold);
+  --color-emerald-accent: var(--accent-emerald);
+  --font-sans: var(--font-office-sans);
+  --font-mono: var(--font-office-mono);
+}
+
+html, body {
+  background: var(--bg-abyss);
+  color: var(--fg-pure);
+  font-family: var(--font-office-sans);
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.005em;
+}
+
+/* Display headings: SHOUT in uppercase with tight tracking. */
+.display-xl {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.display-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.display-md {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Label micro-type: uppercase + positive tracking for legibility at small sizes. */
+.label-micro {
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-ash);
+  font-weight: 500;
+}
+.label-mono {
+  font-family: var(--font-office-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-ash);
+}
+
+/* Sharp angular CTAs. Zero border-radius is the brand rule. */
+.btn-cta {
+  background: var(--accent-gold);
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  border: 0;
+  font-size: 13px;
+  transition: background 120ms ease;
+}
+.btn-cta:hover { background: var(--accent-gold-hover); }
+.btn-cta:active { background: var(--accent-gold-press); }
+.btn-cta:disabled { opacity: 0.35; background: var(--accent-gold); cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-pure);
+  border: 1px solid rgba(255,255,255,0.35);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  font-size: 13px;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--fg-pure); }
+
+/* Form fields kept rectangular too. */
+input, select, textarea {
+  border-radius: 0;
+}
+
+/* Hexagonal accent — used in nameplates / status pills. */
+.hex {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* A thin gold horizon strip used as section divider / progress bar. */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold) 50%, transparent);
+}
+
+.agent-bubble {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 6px;
+  min-width: 116px;
+  max-width: 168px;
+  padding: 7px 10px 9px;
+  border: 1px solid rgba(128, 253, 184, 0.58);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(13, 18, 18, 0.92), rgba(4, 8, 10, 0.86));
+  box-shadow:
+    0 0 18px rgba(16, 185, 129, 0.20),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  color: #d9ffe9;
+  font-family: var(--font-office-mono);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: agent-bubble-rise 240ms ease-out both, agent-bubble-float 2.6s ease-in-out infinite;
+}
+
+.agent-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid rgba(128, 253, 184, 0.48);
+  border-bottom: 1px solid rgba(128, 253, 184, 0.48);
+  background: rgba(4, 8, 10, 0.9);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.agent-bubble--orchestrator {
+  border-color: rgba(250, 204, 21, 0.62);
+  color: #fff3b8;
+  box-shadow:
+    0 0 20px rgba(250, 204, 21, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+.agent-bubble--orchestrator::after {
+  border-color: rgba(250, 204, 21, 0.52);
+}
+
+.agent-bubble__pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+  animation: agent-bubble-pulse 1.1s ease-in-out infinite;
+}
+
+.agent-bubble__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agent-bubble__dots {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.agent-bubble__dots span {
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+  animation: agent-bubble-dot 1.2s ease-in-out infinite;
+}
+
+.agent-bubble__dots span:nth-child(2) { animation-delay: 120ms; }
+.agent-bubble__dots span:nth-child(3) { animation-delay: 240ms; }
+
+.agent-bubble__bar {
+  grid-column: 1 / -1;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.10);
+}
+
+.agent-bubble__bar span {
+  display: block;
+  height: 100%;
+  min-width: 8%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  transition: width 280ms ease;
+}
+
+.agent-bubble--orchestrator .agent-bubble__bar span {
+  width: 64%;
+  animation: agent-bubble-scan 1.4s ease-in-out infinite;
+}
+
+@keyframes agent-bubble-rise {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes agent-bubble-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -3px; }
+}
+
+@keyframes agent-bubble-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@keyframes agent-bubble-dot {
+  0%, 80%, 100% { opacity: 0.28; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-2px); }
+}
+
+@keyframes agent-bubble-scan {
+  0%, 100% { transform: translateX(-35%); }
+  50% { transform: translateX(65%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agent-bubble,
+  .agent-bubble__pulse,
+  .agent-bubble__dots span,
+  .agent-bubble--orchestrator .agent-bubble__bar span {
+    animation: none;
+  }
+}
+
+/* selection */
+::selection { background: var(--accent-gold); color: #000; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+/* Title-bar streaming pulse — inset bottom border breathes between
+   full accent and a softer tint while the specialist is running. */
+@keyframes title-pulse {
+  0%, 100% { box-shadow: inset 0 -2px 0 0 var(--accent); }
+  50% { box-shadow: inset 0 -2px 0 0 var(--accent-soft); }
+}
+.title-bar-streaming {
+  animation: title-pulse 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-bar-streaming {
+    animation: none;
+    box-shadow: inset 0 -2px 0 0 var(--accent);
+  }
+}

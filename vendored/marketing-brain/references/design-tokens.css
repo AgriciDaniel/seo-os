@@ -1,0 +1,191 @@
+/* ============================================================
+   marketing-brain — Design Tokens
+   ============================================================
+   Editorial slate/rust palette shared by:
+   - assets/beast-pdf.html  (HTML template for the deliverable PDF)
+   - assets/editorial-pdf.css  (print-scoped variant)
+   - any future web companion (vault README, Bases card styling)
+
+   Type families assume the user has Fraunces, Source Serif 4 /
+   Pro, Inter Tight, and JetBrains Mono available, with system
+   fallbacks for clean degradation.
+
+   Source of truth — do not redefine these tokens elsewhere; import
+   or duplicate from this file so the editorial PDF and any web
+   surface stay visually consistent.
+   ============================================================ */
+
+:root {
+  /* Ink (deep slate) — primary text + headlines */
+  --ink:        #0e1620;
+  --ink-2:      #1a2733;
+  --ink-3:      #2a3a48;
+
+  /* Paper (warm off-white) — backgrounds */
+  --paper:      #f4f1ea;
+  --paper-2:    #ebe6d9;
+
+  /* Rule (warm grey) — dividers + table borders */
+  --rule:       #d8d2c3;
+
+  /* Muted (cool grey) — secondary text */
+  --muted:      #6b7480;
+
+  /* Rust (salmon-rust accent) — eyebrows, primary actions, drop-cap, KPI emphasis */
+  --rust:       #d97742;
+  --rust-deep:  #b85a2c;
+
+  /* River (slate blue) — secondary accent for callouts + diagrams */
+  --river:      #6b8aa0;
+  --river-deep: #3a5a6f;
+
+  /* Moss (deep green) — quiet success / "good" callout strokes */
+  --moss:       #4a5d3d;
+
+  /* Gold (warm yellow) — highlight chips, tertiary accent */
+  --gold:       #c9a45b;
+
+  /* Status — for "fishing" / "fair" / "poor" / "closed" UI states.
+     These are hue-aligned to rust/gold/moss but keep their own role. */
+  --status-good:  #3a7a48;
+  --status-good-bg: #6dbf7a;
+  --status-warn:  #9a7b1f;
+  --status-warn-bg: #d9b145;
+  --status-bad:   #9a4a3a;
+  --status-bad-bg:  #d97561;
+
+  /* Type families — display, body, UI sans, mono */
+  --font-display: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  --font-body:    'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  --font-ui:      'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ----- Reset + base ----- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- Type system ----- */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--rust);
+}
+.eyebrow.muted { color: var(--muted); }
+.eyebrow.river { color: var(--river-deep); }
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+}
+
+.h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(40px, 5.4vw, 84px); letter-spacing: -0.025em; line-height: 0.98; margin: 0; }
+.h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.4vw, 52px); letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
+.h3 { font-family: var(--font-display); font-weight: 500; font-size: 26px; letter-spacing: -0.01em; line-height: 1.15; margin: 0; }
+.h4 { font-family: var(--font-display); font-weight: 500; font-size: 20px; letter-spacing: -0.005em; line-height: 1.2; margin: 0; }
+
+.sans { font-family: var(--font-ui); }
+.mono { font-family: var(--font-mono); }
+
+p { margin: 0 0 1em 0; }
+a { color: inherit; text-decoration: none; }
+a.link { color: var(--rust-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a.link:hover { color: var(--rust); }
+
+.muted { color: var(--muted); }
+.lede  { font-size: 21px; line-height: 1.55; color: var(--ink-2); }
+
+/* ----- Layout primitives ----- */
+.shell        { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.shell-narrow { max-width: 880px;  margin: 0 auto; padding: 0 32px; }
+.rule         { height: 1px; background: var(--rule); margin: 0; border: 0; }
+.rule-thick   { height: 2px; background: var(--ink);  margin: 0; border: 0; }
+
+/* ----- Section header pattern (used in PDF + web) ----- */
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 48px;
+}
+.section-head .lhs { display: flex; align-items: baseline; gap: 18px; }
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* ----- KPI + cover stat numbers ----- */
+.tick {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 56px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ----- Chips + status pills ----- */
+.chip {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+.chip.dark  { color: var(--ink); }
+.chip.muted { color: var(--muted); }
+.chip.good  { color: var(--status-good); }
+.chip.warn  { color: var(--status-warn); }
+.chip.bad   { color: var(--status-bad); }
+
+/* ----- Callouts (good / warn / info) ----- */
+.callout {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 20px 22px;
+  margin: 18px 0;
+}
+.callout.warn { border-left: 4px solid var(--status-bad); }
+.callout.good { border-left: 4px solid var(--status-good); }
+.callout.info { border-left: 4px solid var(--river-deep); }
+.callout .tag {
+  font-family: var(--font-ui);
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.callout.warn .tag { color: var(--status-bad); }
+.callout.good .tag { color: var(--status-good); }
+.callout.info .tag { color: var(--river-deep); }
+
+/* ============================================================
+   NOTE FOR THE EDITORIAL PDF (assets/editorial-pdf.css)
+   ------------------------------------------------------------
+   WeasyPrint cannot float ::first-letter for drop-caps. The
+   PDF uses ::first-line emphasis instead. This is intentional;
+   do not "fix" it by reintroducing a float — it will silently
+   regress the deliverable. See the comment block at the top
+   of editorial-pdf.css for the full explanation.
+   ============================================================ */

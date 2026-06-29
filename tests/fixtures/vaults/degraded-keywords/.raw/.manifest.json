@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "vault": "Degraded Keywords marketing-brain",
+  "site_under_audit": "https://degraded-keywords.example.com",
+  "manifest_owner": "tester",
+  "last_updated": "2026-05-18",
+  "sources": {
+    "wiki/keywords/2026-05-18-keyword-strategy.md": {
+      "path": "wiki/keywords/2026-05-18-keyword-strategy.md",
+      "hash": "fixture",
+      "retrieved_at": "2026-05-18T00:00:00.000Z",
+      "cost_usd": 0
+    }
+  }
+}

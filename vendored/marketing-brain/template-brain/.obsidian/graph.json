@@ -1,0 +1,33 @@
+{
+  "collapse-filter": false,
+  "search": "-path:.raw/ -path:_attachments/ -path:_templates/",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    { "query": "path:wiki/concepts/", "color": { "a": 1, "rgb": 7028144 } },
+    { "query": "path:wiki/sources/", "color": { "a": 1, "rgb": 4873789 } },
+    { "query": "path:wiki/entities/", "color": { "a": 1, "rgb": 9056191 } },
+    { "query": "path:wiki/decisions/", "color": { "a": 1, "rgb": 13214555 } },
+    { "query": "path:wiki/flows/", "color": { "a": 1, "rgb": 14380578 } },
+    { "query": "path:wiki/pages/", "color": { "a": 1, "rgb": 4368077 } },
+    { "query": "path:wiki/audits/", "color": { "a": 1, "rgb": 13458524 } },
+    { "query": "path:wiki/keywords/", "color": { "a": 1, "rgb": 11498772 } },
+    { "query": "path:wiki/deliverables/", "color": { "a": 1, "rgb": 16737843 } },
+    { "query": "path:wiki/business-types/", "color": { "a": 1, "rgb": 12698049 } }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1,
+  "close": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "vault": "Partial Sweep Failure marketing-brain",
+  "site_under_audit": "https://partial-sweep-failure.example.com",
+  "manifest_owner": "tester",
+  "last_updated": "2026-05-18",
+  "sources": {
+    "wiki/reviews/2026-05-18-partial-brain.md": {
+      "path": "wiki/reviews/2026-05-18-partial-brain.md",
+      "hash": "fixture",
+      "retrieved_at": "2026-05-18T00:00:00.000Z",
+      "cost_usd": 0
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "crawl_samples": [
+    {
+      "url": "https://rituaria.example/",
+      "title": "Rituaria ritual design studio",
+      "h1": "Ritual design for modern brands",
+      "word_count": 1420,
+      "internal_links": 28
+    },
+    {
+      "url": "https://rituaria.example/services",
+      "title": "Brand ritual strategy services",
+      "h1": "Services",
+      "word_count": 960,
+      "internal_links": 18
+    }
+  ],
+  "serp_samples": [
+    {
+      "query": "brand ritual strategy",
+      "results": [
+        { "rank": 1, "title": "Brand rituals and customer loyalty", "domain": "ritualdesign.co" },
+        { "rank": 2, "title": "How ritual design shapes communities", "domain": "communitybrand.com" }
+      ]
+    },
+    {
+      "query": "ritual design studio alternatives",
+      "results": [
+        { "rank": 1, "title": "Best brand experience studios", "domain": "brandexperience.io" },
+        { "rank": 2, "title": "Top ritual design agencies", "domain": "agencyrank.example" }
+      ]
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Ritual Design Co",
+      "domain": "ritualdesign.co",
+      "angle": "owns the educational ritual-design language and ranks with glossary-style content"
+    },
+    {
+      "name": "Brand Experience Lab",
+      "domain": "brandexperience.io",
+      "angle": "wins commercial investigation searches with comparison pages and case-study proof"
+    },
+    {
+      "name": "Community Brand Studio",
+      "domain": "communitybrand.com",
+      "angle": "captures community-building intent with tactical guides and workshops"
+    }
+  ],
+  "paa": [
+    "What is ritual design in branding?",
+    "How do brand rituals improve customer loyalty?",
+    "What are examples of customer rituals?",
+    "How do you create a brand experience system?",
+    "What should a ritual strategy workshop include?"
+  ],
+  "keywords": [
+    {
+      "keyword": "brand ritual strategy",
+      "url": "/brand-ritual-strategy/",
+      "volume": 1900,
+      "intent": "commercial",
+      "priority": "P1"
+    },
+    {
+      "keyword": "ritual design studio",
+      "url": "/ritual-design-studio/",
+      "volume": 1300,
+      "intent": "commercial",
+      "priority": "P1"
+    },
+    {
+      "keyword": "customer ritual examples",
+      "url": "/customer-ritual-examples/",
+      "volume": 2400,
+      "intent": "informational",
+      "priority": "P2"
+    },
+    {
+      "keyword": "brand experience system",
+      "url": "/brand-experience-system/",
+      "volume": 1700,
+      "intent": "commercial",
+      "priority": "P2"
+    },
+    {
+      "keyword": "community ritual framework",
+      "url": "/community-ritual-framework/",
+      "volume": 720,
+      "intent": "informational",
+      "priority": "P3"
+    }
+  ],
+  "gsc": {
+    "clicks": 1840,
+    "impressions": 91000,
+    "ctr": "2.02%",
+    "average_position": 18.6
+  },
+  "ga4": {
+    "sessions": 12400,
+    "conversions": 186,
+    "top_channel": "organic search"
+  },
+  "visual_references": [
+    {
+      "page": "home",
+      "observation": "hero communicates craft but needs clearer service proof and above-fold CTA hierarchy"
+    },
+    {
+      "page": "services",
+      "observation": "service cards are readable but lack decision-stage comparison cues"
+    },
+    {
+      "page": "blog",
+      "observation": "educational articles can become an answer hub with FAQ and internal-link blocks"
+    }
+  ]
+}

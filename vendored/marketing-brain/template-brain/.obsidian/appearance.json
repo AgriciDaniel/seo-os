@@ -1,0 +1,13 @@
+{
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "vault-colors"
+  ],
+  "cssTheme": "",
+  "translucency": false,
+  "monospaceFontFamily": "",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "showInlineTitle": true,
+  "showViewHeader": true
+}

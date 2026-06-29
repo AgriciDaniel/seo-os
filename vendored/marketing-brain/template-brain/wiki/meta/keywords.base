@@ -1,0 +1,98 @@
+filters:
+  and:
+    - type == "keyword"
+formulas:
+  is_top_3: 'position <= 3'
+  is_top_10: 'position <= 10'
+  is_conversion_band: 'position >= 11 && position <= 50'
+  opportunity_score: 'volume / (1 + best_competitor_position)'
+properties:
+  file.name:
+    displayName: Keyword
+  volume:
+    displayName: Volume
+  kd:
+    displayName: KD
+  position:
+    displayName: Our Pos
+  best_competitor_position:
+    displayName: Best Competitor Pos
+  formula.opportunity_score:
+    displayName: Opportunity Score
+  cluster:
+    displayName: Cluster
+  intent:
+    displayName: Intent
+  sheet:
+    displayName: Sheet
+  source_competitor:
+    displayName: Source
+views:
+  - type: table
+    name: All Keywords
+    order:
+      - file.name
+      - cluster
+      - volume
+      - position
+      - formula.opportunity_score
+      - sheet
+    sort:
+      - property: volume
+        direction: DESC
+  - type: cards
+    name: Top Opportunities
+    filters:
+      and:
+        - sheet == "High Opportunity"
+    order:
+      - file.name
+      - volume
+      - position
+      - formula.opportunity_score
+      - cluster
+    sort:
+      - property: formula.opportunity_score
+        direction: DESC
+    cardSize: large
+  - type: table
+    name: By Cluster
+    order:
+      - cluster
+      - file.name
+      - volume
+      - position
+      - formula.opportunity_score
+    sort:
+      - property: cluster
+        direction: ASC
+      - property: volume
+        direction: DESC
+    group: cluster
+  - type: table
+    name: Conversion Band (pos 11-50)
+    filters:
+      and:
+        - formula.is_conversion_band == true
+    order:
+      - file.name
+      - volume
+      - position
+      - formula.opportunity_score
+      - cluster
+    sort:
+      - property: volume
+        direction: DESC
+  - type: table
+    name: Hidden Gems
+    filters:
+      and:
+        - sheet == "Hidden Gems"
+    order:
+      - file.name
+      - volume
+      - position
+      - kd
+    sort:
+      - property: formula.opportunity_score
+        direction: DESC

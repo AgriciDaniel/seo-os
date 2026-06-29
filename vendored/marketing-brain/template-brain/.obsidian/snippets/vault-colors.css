@@ -1,0 +1,60 @@
+/*
+ * vault-colors.css
+ *
+ * Color-codes wiki folders so the file explorer + graph view
+ * surface the structural roles at a glance.
+ *
+ * Concepts (knowledge layer)         — slate blue   #6b8aa0
+ * Sources (raw documentation)        — moss green   #4a5d3d
+ * Entities (people / brands / tools) — amethyst     #8a4fbf
+ * Decisions (release-impacting)      — amber        #c9a45b
+ * Flows (execution paths)            — rust         #c2683f
+ * Pages (page-brief templates)       — teal         #42a8a8
+ * Audits (diagnostic templates)      — coral        #cd6f5f
+ * Keywords (research data)           — gold         #af9b58
+ * Deliverables (synthesis outputs)   — magenta      #a85b8d
+ * Business-types (overlays)          — lavender     #9586c1
+ * Meta (hub / dashboards)            — graphite     #6b6b6b
+ */
+
+/* File explorer — color the folder names */
+.nav-folder-title-content {
+  font-weight: 500;
+}
+
+.nav-folder[data-path="wiki/concepts"] > .nav-folder-title { color: #6b8aa0; }
+.nav-folder[data-path="wiki/sources"] > .nav-folder-title { color: #4a5d3d; }
+.nav-folder[data-path="wiki/entities"] > .nav-folder-title { color: #8a4fbf; }
+.nav-folder[data-path="wiki/decisions"] > .nav-folder-title { color: #c9a45b; }
+.nav-folder[data-path="wiki/flows"] > .nav-folder-title { color: #c2683f; }
+.nav-folder[data-path="wiki/pages"] > .nav-folder-title { color: #42a8a8; }
+.nav-folder[data-path="wiki/audits"] > .nav-folder-title { color: #cd6f5f; }
+.nav-folder[data-path="wiki/keywords"] > .nav-folder-title { color: #af9b58; }
+.nav-folder[data-path="wiki/deliverables"] > .nav-folder-title { color: #a85b8d; }
+.nav-folder[data-path="wiki/business-types"] > .nav-folder-title { color: #9586c1; }
+.nav-folder[data-path="wiki/meta"] > .nav-folder-title { color: #6b6b6b; }
+
+/* Hot / Index / Overview / Log — make them stand out */
+.nav-file[data-path="wiki/hot.md"] > .nav-file-title,
+.nav-file[data-path="wiki/index.md"] > .nav-file-title,
+.nav-file[data-path="wiki/overview.md"] > .nav-file-title,
+.nav-file[data-path="wiki/log.md"] > .nav-file-title {
+  font-weight: 700;
+  color: #d65a31;
+}
+
+/* Status frontmatter — soft visual cues in the property panel */
+.metadata-property[data-property-key="status"] .metadata-property-value[data-property-value="seed"] {
+  color: #c9a45b;
+  font-style: italic;
+}
+.metadata-property[data-property-key="status"] .metadata-property-value[data-property-value="developing"] {
+  color: #6b8aa0;
+}
+.metadata-property[data-property-key="status"] .metadata-property-value[data-property-value="mature"] {
+  color: #4a5d3d;
+}
+.metadata-property[data-property-key="status"] .metadata-property-value[data-property-value="archived"] {
+  color: #6b6b6b;
+  text-decoration: line-through;
+}

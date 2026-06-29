@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "vault": "{{client_name}} marketing-brain",
+  "site_under_audit": "{{site_url}}",
+  "manifest_owner": "{{owner}}",
+  "last_updated": "{{date}}",
+  "sources": {}
+}

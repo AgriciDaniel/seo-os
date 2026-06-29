@@ -1,0 +1,71 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# python bytecode (vendored claude-seo / marketing-brain scripts)
+__pycache__/
+*.py[cod]
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/test-results
+/playwright-report
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files — secrets stay local, template is committed
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# SEO Office — user data (the brain) is sacred and never committed
+/.seo-office/
+/.brain/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Playwright MCP diagnostics
+/.playwright-mcp/
+office-broken.png
+
+# Browser-session screenshots — Playwright captures + manual checkpoints
+# from in-session debugging. Useful locally, never committed.
+/checkpoint-*.png
+/audit-*.png
+/page-*.png
+

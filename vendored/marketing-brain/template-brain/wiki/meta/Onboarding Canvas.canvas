@@ -1,0 +1,176 @@
+{
+  "nodes": [
+    {
+      "id": "title",
+      "type": "text",
+      "text": "# Onboarding Canvas\n\n**{{client_name}} marketing-brain**\n\nVisual checklist. Walk left-to-right; each card links to the relevant flow note.",
+      "x": -800,
+      "y": -400,
+      "width": 600,
+      "height": 200,
+      "color": "1"
+    },
+    {
+      "id": "step0-day0",
+      "type": "file",
+      "file": "wiki/flows/Day 0 Measurement Access Gate.md",
+      "x": -800,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "5"
+    },
+    {
+      "id": "step1-audit",
+      "type": "file",
+      "file": "wiki/flows/Claude SEO Install and First Audit.md",
+      "x": -360,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "5"
+    },
+    {
+      "id": "step2-gsc",
+      "type": "file",
+      "file": "wiki/flows/Days 1-5 GSC Diagnostic and Triage.md",
+      "x": 80,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "4"
+    },
+    {
+      "id": "step3-prune",
+      "type": "file",
+      "file": "wiki/flows/Days 6-12 Content Audit and Prune.md",
+      "x": 520,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "3"
+    },
+    {
+      "id": "step4-refresh",
+      "type": "file",
+      "file": "wiki/flows/Days 13-18 Top Pages Refresh.md",
+      "x": 960,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "3"
+    },
+    {
+      "id": "step5-hero",
+      "type": "file",
+      "file": "wiki/flows/Days 19-24 New Hero Content and Information Gain.md",
+      "x": 1400,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "2"
+    },
+    {
+      "id": "step6-eeat",
+      "type": "file",
+      "file": "wiki/flows/Days 25-30 E-E-A-T and Author Signals.md",
+      "x": 1840,
+      "y": -100,
+      "width": 360,
+      "height": 220,
+      "color": "2"
+    },
+    {
+      "id": "questions",
+      "type": "file",
+      "file": "wiki/questions/Open Questions for {{client_name}}.md",
+      "x": -800,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "6"
+    },
+    {
+      "id": "scorecard",
+      "type": "file",
+      "file": "wiki/deliverables/Dual Surface Scorecard.md",
+      "x": -360,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "roadmap",
+      "type": "file",
+      "file": "wiki/deliverables/Implementation Roadmap.md",
+      "x": 80,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "beast",
+      "type": "file",
+      "file": "wiki/deliverables/ULTIMATE BEAST Plan.md",
+      "x": 520,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "overlay",
+      "type": "file",
+      "file": "wiki/business-types/_index.md",
+      "x": 960,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "6"
+    },
+    {
+      "id": "hot",
+      "type": "file",
+      "file": "wiki/hot.md",
+      "x": 1400,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "index",
+      "type": "file",
+      "file": "wiki/index.md",
+      "x": 1840,
+      "y": 200,
+      "width": 360,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "legend",
+      "type": "text",
+      "text": "## Legend\n\n- 5 (red) — Day 0 / install (blocking)\n- 4 (orange) — Diagnostic\n- 3 (yellow) — Prune & refresh\n- 2 (green) — Publish & trust\n- 6 (purple) — Inputs & overlays\n- 1 (gray) — Always-open meta\n\nWalk top row left-to-right. Bottom row are reference notes always open during the sprint.",
+      "x": -800,
+      "y": 500,
+      "width": 600,
+      "height": 240,
+      "color": "1"
+    }
+  ],
+  "edges": [
+    { "id": "e1", "fromNode": "step0-day0", "fromSide": "right", "toNode": "step1-audit", "toSide": "left" },
+    { "id": "e2", "fromNode": "step1-audit", "fromSide": "right", "toNode": "step2-gsc", "toSide": "left" },
+    { "id": "e3", "fromNode": "step2-gsc", "fromSide": "right", "toNode": "step3-prune", "toSide": "left" },
+    { "id": "e4", "fromNode": "step3-prune", "fromSide": "right", "toNode": "step4-refresh", "toSide": "left" },
+    { "id": "e5", "fromNode": "step4-refresh", "fromSide": "right", "toNode": "step5-hero", "toSide": "left" },
+    { "id": "e6", "fromNode": "step5-hero", "fromSide": "right", "toNode": "step6-eeat", "toSide": "left" },
+    { "id": "e7", "fromNode": "step0-day0", "fromSide": "bottom", "toNode": "questions", "toSide": "top" },
+    { "id": "e8", "fromNode": "step2-gsc", "fromSide": "bottom", "toNode": "scorecard", "toSide": "top" },
+    { "id": "e9", "fromNode": "step3-prune", "fromSide": "bottom", "toNode": "roadmap", "toSide": "top" },
+    { "id": "e10", "fromNode": "step4-refresh", "fromSide": "bottom", "toNode": "beast", "toSide": "top" }
+  ]
+}

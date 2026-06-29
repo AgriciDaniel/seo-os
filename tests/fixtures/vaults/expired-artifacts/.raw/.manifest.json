@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "vault": "Expired Artifacts marketing-brain",
+  "site_under_audit": "https://expired-artifacts.example.com",
+  "manifest_owner": "tester",
+  "last_updated": "2026-05-18",
+  "sources": {
+    "wiki/audits/2024-01-01-technical-audit.md": {
+      "path": "wiki/audits/2024-01-01-technical-audit.md",
+      "hash": "fixture",
+      "retrieved_at": "2024-01-01T00:00:00.000Z",
+      "cost_usd": 0
+    }
+  }
+}

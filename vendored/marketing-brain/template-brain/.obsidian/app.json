@@ -1,0 +1,23 @@
+{
+  "showLineNumber": true,
+  "spellcheck": true,
+  "useTab": false,
+  "tabSize": 2,
+  "newFileLocation": "current",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "alwaysUpdateLinks": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showInlineTitle": true,
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "promptDelete": true,
+  "trashOption": "system",
+  "attachmentFolderPath": "_attachments",
+  "userIgnoreFilters": [
+    ".raw/",
+    "_attachments/"
+  ]
+}

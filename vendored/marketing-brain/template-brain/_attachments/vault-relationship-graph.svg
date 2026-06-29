@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Vault Relationship Graph">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1720"/>
+      <stop offset="0.45" stop-color="#12324a"/>
+      <stop offset="1" stop-color="#1f4e45"/>
+    </linearGradient>
+    <style>
+      .title{font:700 56px Arial,sans-serif;fill:#f7fbff}
+      .sub{font:400 24px Arial,sans-serif;fill:#c7d7e2}
+      .label{font:700 19px Arial,sans-serif;fill:#10202b}
+      .small{font:500 15px Arial,sans-serif;fill:#314655}
+      .node{rx:8;stroke:#ffffff;stroke-width:2}
+      .line{stroke:#c7d7e2;stroke-width:4;stroke-linecap:round;opacity:.75}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="18" fill="none" stroke="#d7efe8" stroke-width="2" opacity=".5"/>
+  <text x="82" y="126" class="title">Vault Relationship Graph</text>
+  <text x="86" y="166" class="sub">Hot / Index / Wiki with immutable raw sources and source-cited outputs</text>
+
+  <rect class="node" x="90" y="302" width="180" height="82" fill="#8ecae6"/><text class="label" x="132" y="350">Hot</text>
+  <rect class="node" x="330" y="302" width="180" height="82" fill="#66d9b8"/><text class="label" x="372" y="350">Index</text>
+  <rect class="node" x="570" y="235" width="180" height="82" fill="#ffd166"/><text class="label" x="610" y="283">Wiki</text>
+  <rect class="node" x="570" y="370" width="180" height="82" fill="#f4a261"/><text class="label" x="606" y="418">Sources</text>
+  <rect class="node" x="810" y="302" width="260" height="82" fill="#ef767a"/><text class="label" x="862" y="350">Deliverables</text>
+  <path class="line" d="M270 343 H330"/><path class="line" d="M510 343 C548 343 536 276 570 276"/><path class="line" d="M510 343 C548 343 536 411 570 411"/><path class="line" d="M750 276 C788 276 775 343 810 343"/><path class="line" d="M750 411 C788 411 775 343 810 343"/>
+
+</svg>

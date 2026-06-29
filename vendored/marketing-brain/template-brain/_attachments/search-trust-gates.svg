@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Search Trust Gates">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1720"/>
+      <stop offset="0.45" stop-color="#12324a"/>
+      <stop offset="1" stop-color="#1f4e45"/>
+    </linearGradient>
+    <style>
+      .title{font:700 56px Arial,sans-serif;fill:#f7fbff}
+      .sub{font:400 24px Arial,sans-serif;fill:#c7d7e2}
+      .label{font:700 19px Arial,sans-serif;fill:#10202b}
+      .small{font:500 15px Arial,sans-serif;fill:#314655}
+      .node{rx:8;stroke:#ffffff;stroke-width:2}
+      .line{stroke:#c7d7e2;stroke-width:4;stroke-linecap:round;opacity:.75}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="18" fill="none" stroke="#d7efe8" stroke-width="2" opacity=".5"/>
+  <text x="82" y="126" class="title">Search Trust Gates</text>
+  <text x="86" y="166" class="sub">No recommendation ships without source, owner, confidence, approval, and rollback</text>
+<circle cx="125" cy="355" r="68" fill="#8ecae6" stroke="#fff" stroke-width="3"/>
+<text class="label" x="82" y="362">Indexed</text>
+<circle cx="325" cy="355" r="68" fill="#66d9b8" stroke="#fff" stroke-width="3"/>
+<text class="label" x="282" y="362">Helpful</text>
+<circle cx="525" cy="355" r="68" fill="#ffd166" stroke="#fff" stroke-width="3"/>
+<text class="label" x="482" y="362">Cited</text>
+<circle cx="725" cy="355" r="68" fill="#f4a261" stroke="#fff" stroke-width="3"/>
+<text class="label" x="682" y="362">Approved</text>
+<circle cx="925" cy="355" r="68" fill="#ef767a" stroke="#fff" stroke-width="3"/>
+<text class="label" x="882" y="362">Rollback</text>
+
+</svg>
