@@ -13,7 +13,12 @@ import "server-only";
 import { spawn } from "node:child_process";
 import path from "node:path";
 
-const PYTHON_BIN = process.env.SEO_OFFICE_PYTHON || "python3";
+// On POSIX the canonical interpreter is `python3`. On native Windows there is
+// no `python3` — that name resolves to the Microsoft Store App Execution Alias
+// stub, which exits 9009 without running. Windows ships the interpreter as
+// `python`. Honor an explicit override on either platform.
+const PYTHON_BIN =
+  process.env.SEO_OFFICE_PYTHON || (process.platform === "win32" ? "python" : "python3");
 
 export interface PythonRunOptions {
   /** Script path relative to project root (e.g. vendored/claude-seo/scripts/fetch_page.py). */

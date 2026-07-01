@@ -188,7 +188,11 @@ async function walk(root: string, dir: string, out: string[]): Promise<void> {
     if (entry.isDirectory()) {
       await walk(root, absolute, out);
     } else if (entry.name.endsWith(".md")) {
-      out.push(path.relative(root, absolute));
+      // Normalize to POSIX separators: callers compare these against POSIX
+      // note paths (e.g. REQUIRED_CORE `wiki/hot.md`, `wiki/sources/` prefixes).
+      // On Windows path.relative yields `wiki\hot.md`, which would fail every
+      // such match and wrongly report core files missing / categories empty.
+      out.push(path.relative(root, absolute).split(path.sep).join("/"));
     }
   }
 }

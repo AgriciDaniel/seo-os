@@ -508,7 +508,8 @@ export async function reindexNoteRow(
     if (!fm.success) return false;
     upsertNoteRow({
       client_slug: clientSlug,
-      path: relativePath,
+      // Normalize to POSIX separators so DB paths match across OSes.
+      path: relativePath.split(path.sep).join("/"),
       type: fm.data.type,
       title: fm.data.title,
       status: fm.data.status,
@@ -554,7 +555,10 @@ async function indexDir(
       );
       const fm = Frontmatter.safeParse(migrated);
       if (!fm.success) continue; // skip notes with invalid frontmatter
-      const rel = path.relative(wikiRoot, abs);
+      // Normalize to POSIX separators so note paths are stable across OSes.
+      // On Windows path.relative yields `sources\Foo.md`; storing that verbatim
+      // produces backslash wikilinks in index.md that the linter can't resolve.
+      const rel = path.relative(wikiRoot, abs).split(path.sep).join("/");
       upsertNoteRow({
         client_slug: slug,
         path: `wiki/${rel}`,
