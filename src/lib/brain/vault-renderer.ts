@@ -130,7 +130,10 @@ async function walkAndRender(
     // renderer write it first wastes a write; more importantly, on a
     // rescaffold it would clobber the user's accumulated `sources:` ledger
     // because the template's `sources` field is empty.
-    if (relative === RAW_MANIFEST_RELATIVE) continue;
+    // Compare with POSIX separators: on Windows `relative` uses `\` but
+    // RAW_MANIFEST_RELATIVE is POSIX, so a raw === would never match and the
+    // template manifest would wrongly be written over the canonical one.
+    if (relative.split(path.sep).join("/") === RAW_MANIFEST_RELATIVE) continue;
 
     // mtime-based preservation
     if (!options.force && fs.existsSync(destination)) {

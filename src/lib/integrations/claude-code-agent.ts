@@ -198,7 +198,15 @@ function createIterator(
       }
     }
 
-    spawnCapture("env", ["--", bin, ...args], {
+    // `env --` gives POSIX a PATH-resolved exec with a hard argument
+    // boundary. Native Windows has no `env` binary (spawning it → ENOENT),
+    // and Node resolves `claude`/`claude.exe` via PATHEXT directly, so spawn
+    // the bin without the wrapper there. Mirrors the CLI provider path.
+    const [spawnBin, spawnArgs] =
+      process.platform === "win32"
+        ? [bin, args]
+        : ["env", ["--", bin, ...args]];
+    spawnCapture(spawnBin, spawnArgs, {
       ...(opts.cwd ? { cwd: opts.cwd } : {}),
       input: opts.prompt,
       signal: ac.signal,
